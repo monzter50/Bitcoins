@@ -1,0 +1,93 @@
+// Color References
+
+
+// Taken from ! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+body
+	background-color #f6f6f6
+	font-family 'Roboto', sans-serif !important
+	font-size 16px
+
+body, html 
+	overflow-x hidden !important
+
+h1,h2,h3,h5
+	font-weight normal
+	
+h1,h2,h3
+	font-size: 2rem
+	line-height: 1
+	padding 0
+	margin 0
+h5
+	font-size: 20px
+	line-height: 1
+	padding 0
+	margin 0
+	margin-top 15px
+small
+	font-weight ligher
+a
+	text-decoration none !important
+
+::-moz-selection
+	background #b3d4fc
+	text-shadow none
+
+::selection
+	background #b3d4fc
+	text-shadow none
+  
+  /*
+ * A better looking default horizontal rule
+ */
+
+hr
+	display block
+	border 1 solid rgb(230,230,230);
+	margin 1em 0
+	padding 0
+audio,
+canvas,
+iframe,
+img,
+svg,
+video
+	vertical-align middle
+fieldset
+	border 0
+	margin 0
+	padding 0
+textarea
+	resize vertical
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+.browserupgrade
+	margin 0.2em 0
+	background #ccc
+	color #000
+
+	
+media_queries = {
+	upsm: "only screen and (min-width: 576px)",
+	upmd: "only screen and (min-width: 768px)",
+	uplg: "only screen and (min-width: 992px)",
+	upxl: "only screen and (min-width: 1200px)",
+	xs: "only screen and (max-width: 575px)",
+	sm: "only screen and (min-width: 600px)",
+	md: "only screen and (min-width: 850px)",
+	lg: "only screen and (min-width: 856px) and (max-width: 1199px)",
+	xl: "only screen and (min-width: 1200px)"
+}
+
+for_breakpoint(breakpoints)
+	conditions = ()
+	for breakpoint in breakpoints
+		push(conditions, media_queries[breakpoint])
+	conditions = join(", ", conditions)
+	@media conditions
+	{block}

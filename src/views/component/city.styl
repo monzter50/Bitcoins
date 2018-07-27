@@ -1,0 +1,118 @@
+@require "../container/home.styl"
+input
+	width 230px
+	height 20px
+	padding 10px 5px
+	font bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma'
+	border 0
+	background #eee
+	-moz-border-radius 3px 0 0 3px
+	-webkit-border-radius 3px 0 0 3px
+	border-radius 3px 0 0 3px
+	+for_breakpoint(upmd)
+		width 650px
+		height 20px
+	&:focus
+		outline 0
+		background #fff
+	&::-webkit-input-placeholder
+		color #999
+		font-weight normal
+		font-style italic
+	&:-moz-placeholder
+		color #999
+		font-weight normal
+		font-style italic
+	&:-ms-input-placeholder
+		color #999
+		font-weight normal
+		font-style italic
+.container
+	padding 1em
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	grid-gap: 20px;
+.card 
+	min-height: 100%;
+	background: white;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+	display: flex;
+	flex-direction: column;
+	text-decoration: none;
+	color: #444;
+	position: relative;
+	top: 0;
+	transition: all .1s ease-in;
+	&:hover
+		top: -2px;
+		box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+
+.cardHeader 
+	border-bottom: 1px solid #f0f0f0;
+	margin: 10px;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	position: relative;
+.cardName
+	color: #3c3c3c;
+	font-family: 'Roboto', sans-serif;
+	margin: 0px;
+.cardRank
+	backface-visibility hidden
+	display inline-block
+	position absolute
+	right 0px
+	top 0px
+	span
+		color #ff9800
+.cardSimbol
+	font-family 'Roboto', sans-serif
+	margin 0px
+	small
+		color #ff9800
+.cardPrice
+	backface-visibility hidden 
+	margin 20px
+	margin-top 0px
+	.value
+		display inline-block
+		vertical-align top
+	.porcent
+		display inline-block
+		margin 0
+		margin-left 5px
+		vertical-align top
+		small
+			font-size 1em
+			color: #66bb6a;
+	.valueMarket
+		display block
+		vertical-align top
+.items
+	padding: 1em;
+.stripes
+	width: 0;
+	height: 0;
+	bottom 0
+	right 0
+	border-bottom: 70px solid #ff9800; 
+	border-left: 70px solid transparent;				
+	z-index 1	
+	position absolute
++for_breakpoint(sm)
+	.container
+		grid-template-columns 1fr 1fr
+		.item
+			grid-column 1/ span 2
+			h1
+				font-size 30px
+
++for_breakpoint(md)
+	.container
+		grid-template-columns 1fr 1fr 1fr 1fr
+
++for_breakpoint(lg)
+	.container
+		grid-template-columns 1fr 1fr 1fr 
